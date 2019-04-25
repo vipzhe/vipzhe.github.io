@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[test2]]></title>
+    <url>%2F2019%2F04%2F25%2Ftest2%2F</url>
+    <content type="text"><![CDATA[test2-]]></content>
+      <tags>
+        <tag>中文</tag>
+        <tag>英文</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[test]]></title>
     <url>%2F2019%2F04%2F25%2Ftest%2F</url>
     <content type="text"><![CDATA[hello carson!]]></content>
