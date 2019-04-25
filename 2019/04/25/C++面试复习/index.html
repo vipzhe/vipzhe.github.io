@@ -138,7 +138,7 @@
 <meta property="og:site_name" content="Carson&#39;s Home">
 <meta property="og:description" content="1.变量和常量的区别 变量在定义后为程序提供了一个有 名字的内存区域 常量不可以改变值，在定义的时候必须初始化。变量可以改变值，在定义的时候可以不进行初始化。 常量本身没有地址属性（除字符串常量等），变量有地址属性。  2.自增自减前操作和后操作的区别 ++a称为前操作，a++称为后操作。前操作是先加一，再返回值，后操作是先返回值，再加一。  3.指针的自增自减的区别 变量的自增自减是修改变量的值">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-25T13:36:22.000Z">
+<meta property="og:updated_time" content="2019-04-25T13:53:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++面试复习">
 <meta name="twitter:description" content="1.变量和常量的区别 变量在定义后为程序提供了一个有 名字的内存区域 常量不可以改变值，在定义的时候必须初始化。变量可以改变值，在定义的时候可以不进行初始化。 常量本身没有地址属性（除字符串常量等），变量有地址属性。  2.自增自减前操作和后操作的区别 ++a称为前操作，a++称为后操作。前操作是先加一，再返回值，后操作是先返回值，再加一。  3.指针的自增自减的区别 变量的自增自减是修改变量的值">
@@ -535,10 +535,10 @@
 <li>动态存储变量，当程序运行到该变量处才为其分配存储空间，程序运行到变量所在作用域的结束处时自动回收其分配的存储空间。因此它的生存期即为所在作用域。</li>
 <li>静态存储变量，当程序开始执行就为其分配存储空间，直到程序结束时，才收回变量的存储空间，其生命周期为整个程序执行的过程。</li>
 <li>C++的存储类型有<strong>自动类型</strong>、<strong>寄存器类型</strong>、<strong>静态类型</strong>、<strong>外部类型</strong>。<ul>
-<li>==auto==，自动存储类型只能是局部变量，属于动态存储类型。</li>
-<li>==静态，static==。即在程序运行的过程中静态变量始终是占用一个存储空间。使用局部静态变量是为了在下次调用该函数时，能使用上次调用后得到的该变量的值。</li>
-<li>==寄存器类型变量（register）==。属于动态存储类型，不为其分配内存，直接使用CPU的寄存器，以提高对这类变量的存取速度。</li>
-<li>==外部类型变量==。==外部类型变量必须是全局变量==，在C++中，有两种情况使用外部类型变量。一种是在同一源程序文件下，当在全局的定义之前使用该变量时，在使用前要对该变量进行外部类型变量声明。另一种情况是当程序有多个文件组成时，若在一个源文件中要引用在另一个源文件中定义的全局变量，则必须外部声明。</li>
+<li>auto，自动存储类型只能是局部变量，属于动态存储类型。</li>
+<li>静态，static。即在程序运行的过程中静态变量始终是占用一个存储空间。使用局部静态变量是为了在下次调用该函数时，能使用上次调用后得到的该变量的值。</li>
+<li>寄存器类型变量（register） 。属于动态存储类型，不为其分配内存，直接使用CPU的寄存器，以提高对这类变量的存取速度。</li>
+<li>外部类型变量 。 外部类型变量必须是全局变量 ，在C++中，有两种情况使用外部类型变量。一种是在同一源程序文件下，当在全局的定义之前使用该变量时，在使用前要对该变量进行外部类型变量声明。另一种情况是当程序有多个文件组成时，若在一个源文件中要引用在另一个源文件中定义的全局变量，则必须外部声明。</li>
 <li>如果在某文件中定义的全局变量不想被其他文件所调用，则必须将变量声明为静态全局变量。</li>
 </ul>
 </li>
@@ -546,7 +546,7 @@
 </li>
 </ul>
 <h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><ul>
-<li><p>引用就是C++对象的另一个名字，在实际中引用主要用作函数的形式参数。通过在变量名前添加“&amp;”符号来定义。引用类型是一个==复合类型==，指用其他类型定义的类型。每一种引用类型都关联到某一其他类型。C++不能定义引用类型的引用，但是可以定义任何其它类型的引用。</p>
+<li><p>引用就是C++对象的另一个名字，在实际中引用主要用作函数的形式参数。通过在变量名前添加“&amp;”符号来定义。引用类型是一个 复合类型 ，指用其他类型定义的类型。每一种引用类型都关联到某一其他类型。C++不能定义引用类型的引用，但是可以定义任何其它类型的引用。</p>
 </li>
 <li><p>const引用和非const引用</p>
 <ul>
@@ -555,7 +555,7 @@
 </li>
 </ul>
 <h3 id="输入流与输出流"><a href="#输入流与输出流" class="headerlink" title="输入流与输出流"></a>输入流与输出流</h3><ul>
-<li>C++的输入输出流是指由若干字节组成的字节序列，这些字节中数据按顺序从一个对象传送到另一个对象。在输入操作中，字节流从输入设备（如键盘、磁盘）流向内存；在输出操作时，字节流从内存流向输出设备（例如屏幕，打印机、磁盘）等。流中的内容可以是==ASCII字符、二进制形式的数据、图形图像、数字音频视频或其他形式的信息==。</li>
+<li>C++的输入输出流是指由若干字节组成的字节序列，这些字节中数据按顺序从一个对象传送到另一个对象。在输入操作中，字节流从输入设备（如键盘、磁盘）流向内存；在输出操作时，字节流从内存流向输出设备（例如屏幕，打印机、磁盘）等。流中的内容可以是==ASCII字符、二进制形式的数据、图形图像、数字音频视频或其他形式的信息 。</li>
 <li>实际上，在内存中为每个数据流开辟一个内存缓冲区，用来存放流中的数据。缓冲区中的数据就是流。</li>
 <li>C++中的输入输出包括对标准输入设备键盘和标准输出设备显示器、对在外存磁盘上的文件和对内存中指定的字符串存储空间进行输入输出三个方面。</li>
 <li>头文件是程序与类库的接口，iostream类库的接口分别由不同的头文件来实现。</li>
@@ -576,11 +576,11 @@
 </li>
 </ul>
 <h3 id="预处理和内存管理"><a href="#预处理和内存管理" class="headerlink" title="预处理和内存管理"></a>预处理和内存管理</h3><ul>
-<li>预处理是指在进行编译的第一遍扫描之前所做的工作。==预处理由预处理程序负责完成。当对一个源文件进行编译时，系统将自动引用预处理程序对源程序中的预处理部分做处理，处理完毕自动进入对源程序的编译。==</li>
+<li>预处理是指在进行编译的第一遍扫描之前所做的工作。 预处理由预处理程序负责完成。当对一个源文件进行编译时，系统将自动引用预处理程序对源程序中的预处理部分做处理，处理完毕自动进入对源程序的编译。 </li>
 <li>宏定义又称为宏代换，宏替换，简称宏。作用就是可以自动产生代码</li>
 <li><p>C语言中有三种预处理功能：</p>
 <ul>
-<li>宏定义。语法为:#define&lt;标识符&gt;&lt;字符串&gt;，其中的标识符就是所谓的符号常量，也称为“宏名”。==预处理（预编译）工作也叫做宏展开，即将宏名替换为字符串==。带参数的宏定义格式为：#define&lt;宏名&gt;(&lt;参数表&gt;)&lt;宏体&gt;.&lt;宏体&gt;是被替换用的字符串，宏体中的字符串是由参数表中的各个参数组成的表达式。<ul>
+<li>宏定义。语法为:#define&lt;标识符&gt;&lt;字符串&gt;，其中的标识符就是所谓的符号常量，也称为“宏名”。 预处理（预编译）工作也叫做宏展开，即将宏名替换为字符串 。带参数的宏定义格式为：#define&lt;宏名&gt;(&lt;参数表&gt;)&lt;宏体&gt;.&lt;宏体&gt;是被替换用的字符串，宏体中的字符串是由参数表中的各个参数组成的表达式。<ul>
 <li>宏定义和操作符的区别：宏定义是替换，不做计算，也不做表达式求解。另外，宏的替换是在编译前进行，所以不占用内存和编译时间。</li>
 </ul>
 </li>
@@ -592,10 +592,10 @@
 </li>
 <li><p>include的使用方式</p>
 <ul>
-<li>#####include指示只接受一个参数就是头文件名。预处理器用指定的头文件内容替代每个#include.</li>
+<li>include指示只接受一个参数就是头文件名。预处理器用指定的头文件内容替代每个#include.</li>
 <li>使用方式有#include&lt;&gt;和#include””两种<ul>
-<li>######include&lt;&gt;是使用标准头文件。标准头文件是在系统文件目录下查找。</li>
-<li>#####include“”是使用自定义头文件。用户自定义文件会依次在用户目录、C++安装目录和系统文件中查找。</li>
+<li>include&lt;&gt;是使用标准头文件。标准头文件是在系统文件目录下查找。</li>
+<li>include“”是使用自定义头文件。用户自定义文件会依次在用户目录、C++安装目录和系统文件中查找。</li>
 </ul>
 </li>
 </ul>
@@ -609,27 +609,27 @@
 <li>const int * const 不仅指针本身不能修改，指向的内容也不能修改。</li>
 </ul>
 <h3 id="const与-define的特点和区别"><a href="#const与-define的特点和区别" class="headerlink" title="const与#define的特点和区别"></a>const与#define的特点和区别</h3><ul>
-<li><p>#####define只是用来做本文替换的，例如表示的是编译器进行编译的时候，编译器首先把所有的PI替换，然后进行遍历。存在于程序的代码段，在实际程序中只是一个常数，并没有实际的存在。</p>
+<li><p>define只是用来做本文替换的，例如表示的是编译器进行编译的时候，编译器首先把所有的PI替换，然后进行遍历。存在于程序的代码段，在实际程序中只是一个常数，并没有实际的存在。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PI 3.14</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>const常量存在于程序的数据段，并在堆栈分配了空间。const常量是一个Run-Time的概念，在程序中确实存在并可以被调用、传递。</p>
 </li>
 </ul>
 <h3 id="const的作用"><a href="#const的作用" class="headerlink" title="const的作用"></a>const的作用</h3><ol>
-<li>（1）定义常量，定义的乘凉编译器可以对其进行数据静态类型安全检查</li>
-<li>（2）修饰函数形式参数：当输入参数为用户自定义类型和抽象数据类型时，应该将值传递改为”const&amp;传递”，可以提高效率</li>
-<li>（3）修饰函数的返回值。</li>
-<li>（4）修饰类的成员函数：任何不会修改数据成员的函数都应用const修饰，这样当不小心修改了数据成员或者调用了非const成员函数的时候，编译器都会报错。</li>
+<li>定义常量，定义的乘凉编译器可以对其进行数据静态类型安全检查</li>
+<li>修饰函数形式参数：当输入参数为用户自定义类型和抽象数据类型时，应该将值传递改为”const&amp;传递”，可以提高效率</li>
+<li>修饰函数的返回值。</li>
+<li>修饰类的成员函数：任何不会修改数据成员的函数都应用const修饰，这样当不小心修改了数据成员或者调用了非const成员函数的时候，编译器都会报错。</li>
 </ol>
 <h3 id="static的作用"><a href="#static的作用" class="headerlink" title="static的作用"></a>static的作用</h3><ol>
-<li>（1）在函数体，一个被声明为静态的变量在这一函数被调用的过程中维持其值不变。</li>
-<li>（2）在模块内（但在函数体外），一个被声明为静态的变量可以被模块内所有函数访问，但不能被模块外其他函数访问。它是一个本地的全局变量。</li>
-<li>（3）在模块内，一个被声明为静态的函数只可被这一模块内的其他函数调用。那就是这个函数被限制在声明它的模块的本地范围内使用。</li>
+<li>在函数体，一个被声明为静态的变量在这一函数被调用的过程中维持其值不变。</li>
+<li>在模块内（但在函数体外），一个被声明为静态的变量可以被模块内所有函数访问，但不能被模块外其他函数访问。它是一个本地的全局变量。</li>
+<li>在模块内，一个被声明为静态的函数只可被这一模块内的其他函数调用。那就是这个函数被限制在声明它的模块的本地范围内使用。</li>
 </ol>
 <h3 id="static-全局变量和普通的全局变量的区别"><a href="#static-全局变量和普通的全局变量的区别" class="headerlink" title="static 全局变量和普通的全局变量的区别"></a>static 全局变量和普通的全局变量的区别</h3><ol>
-<li>（1）全局变量加上static就是==静态的全局变量==，全局变量本身就是静态存储方式，全局静态变量也是静态存储方式，这两者存储方式相同。</li>
-<li>（2）区别是非静态全局变量的作用域是==整个源程序，当一个源程序由多个源文件组成时，非静态的全局变量在各个源文件中都是有效的==。而静态全局变量限制了作用域为只在定义该变量的源文件内有效，在其他源文件中不能使用。</li>
-<li>（3）把局部变量变为静态变量改变的是存储方式，即改变了它的生存期；吧全局变量改变为静态变量是改变的作用域。</li>
+<li>全局变量加上static就是 静态的全局变量 ，全局变量本身就是静态存储方式，全局静态变量也是静态存储方式，这两者存储方式相同。</li>
+<li>区别是非静态全局变量的作用域是 整个源程序，当一个源程序由多个源文件组成时，非静态的全局变量在各个源文件中都是有效的 。而静态全局变量限制了作用域为只在定义该变量的源文件内有效，在其他源文件中不能使用。</li>
+<li>把局部变量变为静态变量改变的是存储方式，即改变了它的生存期；吧全局变量改变为静态变量是改变的作用域。</li>
 </ol>
 <ul>
 <li>static全局变量和普通全局变量的区别是，static全局变量只初始化一次，防止在其他文件单元中被引用。</li>
@@ -669,19 +669,19 @@
 </ul>
 <h3 id="指针加减操作"><a href="#指针加减操作" class="headerlink" title="指针加减操作"></a>指针加减操作</h3><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int a[<span class="number">5</span>] = &#123;<span class="number">1</span>，<span class="number">2</span>，<span class="number">3</span>，<span class="number">4</span>，<span class="number">5</span>&#125;；</span><br></pre></td></tr></table></figure>
 <p>a与&amp;a的地址是一样的，但意思不一样，a是数组首地址，也就是a[0]的地址；&amp;a是对象（数组）首地址，a+1是数组下一元素的地址,即a[1];而&amp;a+1是下一个对象的地址，即a[5]</p>
-<h3 id="指针比较"><a href="#指针比较" class="headerlink" title="==指针比较=="></a>==指针比较==</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> str1[] = <span class="string">"abc"</span>;</span><br><span class="line"><span class="keyword">char</span> str2[] = <span class="string">"abc"</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> str3[] = <span class="string">"abc"</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> str4[] = <span class="string">"abc"</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span>* str5 = <span class="string">"abc"</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span>* str6 = <span class="string">"abc"</span>;</span><br><span class="line"><span class="keyword">char</span>* str7 = <span class="string">"abc"</span>;</span><br><span class="line"><span class="keyword">char</span>* str8 = <span class="string">"abc"</span></span><br></pre></td></tr></table></figure>
+<h3 id="指针比较"><a href="#指针比较" class="headerlink" title="指针比较"></a>指针比较</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> str1[] = <span class="string">"abc"</span>;</span><br><span class="line"><span class="keyword">char</span> str2[] = <span class="string">"abc"</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> str3[] = <span class="string">"abc"</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> str4[] = <span class="string">"abc"</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span>* str5 = <span class="string">"abc"</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span>* str6 = <span class="string">"abc"</span>;</span><br><span class="line"><span class="keyword">char</span>* str7 = <span class="string">"abc"</span>;</span><br><span class="line"><span class="keyword">char</span>* str8 = <span class="string">"abc"</span></span><br></pre></td></tr></table></figure>
 <p>数组str1,str2,str3,str4都是在栈中分配的，内存中内容都为”abc”加一个’0’，但是它们的位置不同，所以都不相等<br>数组5，6，7，8也是在栈中分配的，它们指向“abc”字符串，此时”abc”存放在数据区，所以它们指向同一块数据区的内存。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span>* str2 = <span class="string">"AAA"</span></span><br><span class="line">str2[<span class="number">0</span>] = <span class="string">'B'</span>;</span><br></pre></td></tr></table></figure>
 <p>是错误的，因为str2指向的是字符串常量，常量不能修改。</p>
 <h3 id="指针常量和常量指针"><a href="#指针常量和常量指针" class="headerlink" title="指针常量和常量指针"></a>指针常量和常量指针</h3><ul>
 <li>前面的一个通常是修饰部分，中心词是后面一个词。</li>
 <li>常量指针，表述为是常量的指针，它首先应该是一个指针。它是指向常量的指针，指针所指向的地址的内容是不可修改的。</li>
-<li>指针常量，表述为是指针的常量，它首先是一个常量。指针常量就是不能修改指针所指向的地址，一开始初始化指向哪，它就只能指向哪。==就像一个数组的数组名一样，是一个固定的指针，不能对它移动操作。==</li>
+<li>指针常量，表述为是指针的常量，它首先是一个常量。指针常量就是不能修改指针所指向的地址，一开始初始化指向哪，它就只能指向哪。 就像一个数组的数组名一样，是一个固定的指针，不能对它移动操作。 </li>
 </ul>
 <h3 id="指针的区别"><a href="#指针的区别" class="headerlink" title="指针的区别"></a>指针的区别</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> * <span class="keyword">const</span> p1;</span><br><span class="line"><span class="keyword">char</span> <span class="keyword">const</span> * p2;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *p3;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> * <span class="keyword">const</span> p4;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>==如果const位于*号的左侧，则const就是用来修饰指针所指向的变量，即指针指向为常量==</li>
-<li>==const位于*的右侧，const就是修饰指针本身，即指针本身是常量==</li>
+<li>如果const位于*号的左侧，则const就是用来修饰指针所指向的变量，即指针指向为常量 </li>
+<li>==const位于*的右侧，const就是修饰指针本身，即指针本身是常量 </li>
 </ul>
 <h3 id="this指针"><a href="#this指针" class="headerlink" title="this指针"></a>this指针</h3><ul>
 <li>类的非静态成员函数才有this指针</li>
@@ -691,8 +691,7 @@
 <li>指针数组是指一个数组里存放的都是同一个类型的指针，如int * a[10];</li>
 <li>数组指针指一个指向一维或者多维数组的指针，例如int * b = new int[10];</li>
 </ul>
-<p>###函数指针和指针函数的区别</p>
-<ul>
+<h3 id="函数指针和指针函数的区别"><a href="#函数指针和指针函数的区别" class="headerlink" title="函数指针和指针函数的区别"></a>函数指针和指针函数的区别</h3><ul>
 <li>指针函数是指带指针的函数，即本质是一个函数，并且返回类型是某一类型的指针，其定义为下：返回类型标识符 *返回名称(形式参数表){函数体}</li>
 <li>函数指针是指向函数的指针变量，因而它本身首先应该是指针变量，只不过该指针变量指向函数。有了指向函数的指针变量后，可用该指针变量调用函数。</li>
 </ul>
@@ -754,13 +753,13 @@
 </ul>
 <h3 id="什么是多态"><a href="#什么是多态" class="headerlink" title="什么是多态"></a>什么是多态</h3><ul>
 <li>多态性的定义：同一操作作用于不同的对象，可以有不同的解释，产生不同的执行效果。有两种类型的多态性：<ul>
-<li>==编译时的多态==。编译时的多态是通过重载来实现的。对于非虚的成员来说，系统在编译时，根据传递的参数、返回的类型等信息决定实现何种操作。</li>
-<li>==运行时的多态==。运行时的多态是指直到系统运行时，才根据实际情况决定实现何种操作。C++中，运行时的多态</li>
+<li>编译时的多态 。编译时的多态是通过重载来实现的。对于非虚的成员来说，系统在编译时，根据传递的参数、返回的类型等信息决定实现何种操作。</li>
+<li>运行时的多态 。运行时的多态是指直到系统运行时，才根据实际情况决定实现何种操作。C++中，运行时的多态</li>
 </ul>
 </li>
 </ul>
 <h3 id="虚函数的实现"><a href="#虚函数的实现" class="headerlink" title="虚函数的实现"></a>虚函数的实现</h3><ul>
-<li>虚函数是通过==虚函数表==来实现的。一个类中含有虚函数，则系统会为这个类分配一个指针成员指向一张虚函数表(vtbl)，表中每一项指向一个虚函数的地址，实现上就是一个函数指针的数组。</li>
+<li>虚函数是通过 虚函数表 来实现的。一个类中含有虚函数，则系统会为这个类分配一个指针成员指向一张虚函数表(vtbl)，表中每一项指向一个虚函数的地址，实现上就是一个函数指针的数组。</li>
 <li>虚函数是为了允许用基类的指针来调用子类的这个函数</li>
 <li>当一个成员函数被声明为虚函数后，其派生类的同名函数都自动成为虚函数，派生类的该虚函数，可以不加virtual</li>
 <li>在构造函数中，虚拟机制机制不会发生作用。</li>
@@ -1033,7 +1032,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-变量和常量的区别"><span class="nav-number">1.</span> <span class="nav-text">1.变量和常量的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-自增自减前操作和后操作的区别"><span class="nav-number">2.</span> <span class="nav-text">2.自增自减前操作和后操作的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-指针的自增自减的区别"><span class="nav-number">3.</span> <span class="nav-text">3.指针的自增自减的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-变量"><span class="nav-number">4.</span> <span class="nav-text">4.变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用"><span class="nav-number">5.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入流与输出流"><span class="nav-number">6.</span> <span class="nav-text">输入流与输出流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何重载输入输出"><span class="nav-number">7.</span> <span class="nav-text">如何重载输入输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件输入-输出"><span class="nav-number">8.</span> <span class="nav-text">文件输入/输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常和错误"><span class="nav-number">9.</span> <span class="nav-text">异常和错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预处理和内存管理"><span class="nav-number">10.</span> <span class="nav-text">预处理和内存管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预处理的使用"><span class="nav-number">11.</span> <span class="nav-text">预处理的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#const的使用"><span class="nav-number">12.</span> <span class="nav-text">const的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#const与-define的特点和区别"><span class="nav-number">13.</span> <span class="nav-text">const与#define的特点和区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#const的作用"><span class="nav-number">14.</span> <span class="nav-text">const的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static的作用"><span class="nav-number">15.</span> <span class="nav-text">static的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static-全局变量和普通的全局变量的区别"><span class="nav-number">16.</span> <span class="nav-text">static 全局变量和普通的全局变量的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sizeof"><span class="nav-number">17.</span> <span class="nav-text">sizeof</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sizeof与strlen区别"><span class="nav-number">18.</span> <span class="nav-text">sizeof与strlen区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sizeof的作用"><span class="nav-number">19.</span> <span class="nav-text">sizeof的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内联函数"><span class="nav-number">20.</span> <span class="nav-text">内联函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指针和引用的区别"><span class="nav-number">21.</span> <span class="nav-text">指针和引用的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指针加减操作"><span class="nav-number">22.</span> <span class="nav-text">指针加减操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指针比较"><span class="nav-number">23.</span> <span class="nav-text">==指针比较==</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指针常量和常量指针"><span class="nav-number">24.</span> <span class="nav-text">指针常量和常量指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指针的区别"><span class="nav-number">25.</span> <span class="nav-text">指针的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this指针"><span class="nav-number">26.</span> <span class="nav-text">this指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指针数组和数组指针的区别"><span class="nav-number">27.</span> <span class="nav-text">指针数组和数组指针的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#各种指针的定义"><span class="nav-number">28.</span> <span class="nav-text">各种指针的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#野指针"><span class="nav-number">29.</span> <span class="nav-text">野指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#malloc-free和new-delete的区别"><span class="nav-number">30.</span> <span class="nav-text">malloc/free和new/delete的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存的分配方式"><span class="nav-number">31.</span> <span class="nav-text">内存的分配方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类的特性"><span class="nav-number">32.</span> <span class="nav-text">类的特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态成员变量"><span class="nav-number">33.</span> <span class="nav-text">静态成员变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数和析构函数的重载"><span class="nav-number">34.</span> <span class="nav-text">构造函数和析构函数的重载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重载和覆写的区别"><span class="nav-number">35.</span> <span class="nav-text">重载和覆写的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-类继承的三种关系"><span class="nav-number">36.</span> <span class="nav-text">C++类继承的三种关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是多态"><span class="nav-number">37.</span> <span class="nav-text">什么是多态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虚函数的实现"><span class="nav-number">38.</span> <span class="nav-text">虚函数的实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多重继承"><span class="nav-number">39.</span> <span class="nav-text">多重继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要引入抽象基类和纯虚函数"><span class="nav-number">40.</span> <span class="nav-text">为什么要引入抽象基类和纯虚函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虚函数与纯虚函数的区别"><span class="nav-number">41.</span> <span class="nav-text">虚函数与纯虚函数的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指针形参与引用形参的区别"><span class="nav-number">42.</span> <span class="nav-text">指针形参与引用形参的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STL容器分类"><span class="nav-number">43.</span> <span class="nav-text">STL容器分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数模板"><span class="nav-number">44.</span> <span class="nav-text">函数模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类模板"><span class="nav-number">45.</span> <span class="nav-text">类模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STL如何实现vector"><span class="nav-number">46.</span> <span class="nav-text">STL如何实现vector</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list和vector的区别"><span class="nav-number">47.</span> <span class="nav-text">list和vector的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#适配器stack和queue的使用"><span class="nav-number">48.</span> <span class="nav-text">适配器stack和queue的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#map的用法"><span class="nav-number">49.</span> <span class="nav-text">map的用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STL中map内部是如何实现的"><span class="nav-number">50.</span> <span class="nav-text">STL中map内部是如何实现的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#map和hashmap的区别"><span class="nav-number">51.</span> <span class="nav-text">map和hashmap的区别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-变量和常量的区别"><span class="nav-number">1.</span> <span class="nav-text">1.变量和常量的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-自增自减前操作和后操作的区别"><span class="nav-number">2.</span> <span class="nav-text">2.自增自减前操作和后操作的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-指针的自增自减的区别"><span class="nav-number">3.</span> <span class="nav-text">3.指针的自增自减的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-变量"><span class="nav-number">4.</span> <span class="nav-text">4.变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用"><span class="nav-number">5.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入流与输出流"><span class="nav-number">6.</span> <span class="nav-text">输入流与输出流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何重载输入输出"><span class="nav-number">7.</span> <span class="nav-text">如何重载输入输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件输入-输出"><span class="nav-number">8.</span> <span class="nav-text">文件输入/输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常和错误"><span class="nav-number">9.</span> <span class="nav-text">异常和错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预处理和内存管理"><span class="nav-number">10.</span> <span class="nav-text">预处理和内存管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预处理的使用"><span class="nav-number">11.</span> <span class="nav-text">预处理的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#const的使用"><span class="nav-number">12.</span> <span class="nav-text">const的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#const与-define的特点和区别"><span class="nav-number">13.</span> <span class="nav-text">const与#define的特点和区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#const的作用"><span class="nav-number">14.</span> <span class="nav-text">const的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static的作用"><span class="nav-number">15.</span> <span class="nav-text">static的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static-全局变量和普通的全局变量的区别"><span class="nav-number">16.</span> <span class="nav-text">static 全局变量和普通的全局变量的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sizeof"><span class="nav-number">17.</span> <span class="nav-text">sizeof</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sizeof与strlen区别"><span class="nav-number">18.</span> <span class="nav-text">sizeof与strlen区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sizeof的作用"><span class="nav-number">19.</span> <span class="nav-text">sizeof的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内联函数"><span class="nav-number">20.</span> <span class="nav-text">内联函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指针和引用的区别"><span class="nav-number">21.</span> <span class="nav-text">指针和引用的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指针加减操作"><span class="nav-number">22.</span> <span class="nav-text">指针加减操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指针比较"><span class="nav-number">23.</span> <span class="nav-text">指针比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指针常量和常量指针"><span class="nav-number">24.</span> <span class="nav-text">指针常量和常量指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指针的区别"><span class="nav-number">25.</span> <span class="nav-text">指针的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this指针"><span class="nav-number">26.</span> <span class="nav-text">this指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指针数组和数组指针的区别"><span class="nav-number">27.</span> <span class="nav-text">指针数组和数组指针的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数指针和指针函数的区别"><span class="nav-number">28.</span> <span class="nav-text">函数指针和指针函数的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#各种指针的定义"><span class="nav-number">29.</span> <span class="nav-text">各种指针的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#野指针"><span class="nav-number">30.</span> <span class="nav-text">野指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#malloc-free和new-delete的区别"><span class="nav-number">31.</span> <span class="nav-text">malloc/free和new/delete的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存的分配方式"><span class="nav-number">32.</span> <span class="nav-text">内存的分配方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类的特性"><span class="nav-number">33.</span> <span class="nav-text">类的特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态成员变量"><span class="nav-number">34.</span> <span class="nav-text">静态成员变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数和析构函数的重载"><span class="nav-number">35.</span> <span class="nav-text">构造函数和析构函数的重载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重载和覆写的区别"><span class="nav-number">36.</span> <span class="nav-text">重载和覆写的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-类继承的三种关系"><span class="nav-number">37.</span> <span class="nav-text">C++类继承的三种关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是多态"><span class="nav-number">38.</span> <span class="nav-text">什么是多态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虚函数的实现"><span class="nav-number">39.</span> <span class="nav-text">虚函数的实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多重继承"><span class="nav-number">40.</span> <span class="nav-text">多重继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要引入抽象基类和纯虚函数"><span class="nav-number">41.</span> <span class="nav-text">为什么要引入抽象基类和纯虚函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虚函数与纯虚函数的区别"><span class="nav-number">42.</span> <span class="nav-text">虚函数与纯虚函数的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指针形参与引用形参的区别"><span class="nav-number">43.</span> <span class="nav-text">指针形参与引用形参的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STL容器分类"><span class="nav-number">44.</span> <span class="nav-text">STL容器分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数模板"><span class="nav-number">45.</span> <span class="nav-text">函数模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类模板"><span class="nav-number">46.</span> <span class="nav-text">类模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STL如何实现vector"><span class="nav-number">47.</span> <span class="nav-text">STL如何实现vector</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list和vector的区别"><span class="nav-number">48.</span> <span class="nav-text">list和vector的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#适配器stack和queue的使用"><span class="nav-number">49.</span> <span class="nav-text">适配器stack和queue的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#map的用法"><span class="nav-number">50.</span> <span class="nav-text">map的用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STL中map内部是如何实现的"><span class="nav-number">51.</span> <span class="nav-text">STL中map内部是如何实现的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#map和hashmap的区别"><span class="nav-number">52.</span> <span class="nav-text">map和hashmap的区别</span></a></li></ol></div>
             
 
           </div>
