@@ -138,14 +138,14 @@
 <meta property="og:site_name" content="Carson&#39;s Home">
 <meta property="og:description" content="常见python面试题Python是如何进行内存管理的？答:从三个方面来说,一对象的引用计数机制,二垃圾回收机制,三内存池机制 一、对象的引用计数机制 Python内部使用引用计数，来保持追踪内存中的对象，所有对象都有引用计数。 引用计数增加的情况： 1，一个对象分配一个新名称 2，将其放入一个容器中（如列表、元组或字典） 引用计数减少的情况： 1，使用del语句对对象别名显示的销毁 2，引用超出">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://i1.bvimg.com/685082/0ef55837ce31d02f.png">
+<meta property="og:image" content="http://i1.bvimg.com/685082/0782db7650cb8992.png">
 <meta property="og:image" content="http://i1.bvimg.com/685082/124756e9f8fa7ea9.png">
-<meta property="og:image" content="http://yoursite.com/Users/carson/Downloads/%20formula/WX20180331-191625@2x.png">
-<meta property="og:image" content="http://yoursite.com/Users/carson/Downloads/%20formula/WX20180331-191625@2x.png">
-<meta property="og:updated_time" content="2019-04-26T02:27:38.000Z">
+<meta property="og:updated_time" content="2019-04-26T02:30:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python面试复习">
 <meta name="twitter:description" content="常见python面试题Python是如何进行内存管理的？答:从三个方面来说,一对象的引用计数机制,二垃圾回收机制,三内存池机制 一、对象的引用计数机制 Python内部使用引用计数，来保持追踪内存中的对象，所有对象都有引用计数。 引用计数增加的情况： 1，一个对象分配一个新名称 2，将其放入一个容器中（如列表、元组或字典） 引用计数减少的情况： 1，使用del语句对对象别名显示的销毁 2，引用超出">
-<meta name="twitter:image" content="http://i1.bvimg.com/685082/124756e9f8fa7ea9.png">
+<meta name="twitter:image" content="http://i1.bvimg.com/685082/0ef55837ce31d02f.png">
 
 
 
@@ -545,16 +545,14 @@
 <h2 id="Python里面如何拷贝一个对象？（赋值，浅拷贝，深拷贝的区别）"><a href="#Python里面如何拷贝一个对象？（赋值，浅拷贝，深拷贝的区别）" class="headerlink" title="Python里面如何拷贝一个对象？（赋值，浅拷贝，深拷贝的区别）"></a>Python里面如何拷贝一个对象？（赋值，浅拷贝，深拷贝的区别）</h2><p>python中的变量只是一个标签，是引用</p>
 <p><a href="https://www.cnblogs.com/shenbuer/p/7977323.html" target="_blank" rel="noopener">https://www.cnblogs.com/shenbuer/p/7977323.html</a></p>
 <p>答：<strong>赋值（=），就是创建了对象的一个新的引用，修改其中任意一个变量都会影响到另一个</strong>。</p>
-<p><img src="http://i1.bvimg.com/685082/124756e9f8fa7ea9.png" alt="Markdown"></p>
-<p>浅拷贝：创建一个新的对象，但它包含的是对原始对象中包含项的引用（如果用引用的方式修改其中一个对象，另外一个也会修改改变）浅拷贝就是里面的子对象还是共用，例如列表， 其他的复制一份新的</p>
+<p><img src="http://i1.bvimg.com/685082/0ef55837ce31d02f.png" alt="Markdown"><br>浅拷贝：创建一个新的对象，但它包含的是对原始对象中包含项的引用（如果用引用的方式修改其中一个对象，另外一个也会修改改变）浅拷贝就是里面的子对象还是共用，例如列表， 其他的复制一份新的</p>
 <ul>
 <li>完全切片方法；</li>
 <li>工厂函数，如list()；</li>
 <li>copy模块的copy()函数}</li>
 </ul>
-<p><img src="/Users/carson/Downloads/ formula/WX20180331-191625@2x.png" alt="WX20180331-191625@2x"></p>
-<p>深拷贝：创建一个新的对象，<strong>并且递归的复制它所包含的对象（修改其中一个，另外一个不会改变）</strong>{copy模块的deep.deepcopy()函数} 深拷贝就是全都复制新的</p>
-<p><img src="/Users/carson/Downloads/ formula/WX20180331-191625@2x.png" alt="WX20180331-191625@2x"></p>
+<p><img src="http://i1.bvimg.com/685082/0782db7650cb8992.png" alt="Markdown"><br>深拷贝：创建一个新的对象，<strong>并且递归的复制它所包含的对象（修改其中一个，另外一个不会改变）</strong>{copy模块的deep.deepcopy()函数} 深拷贝就是全都复制新的</p>
+<p><img src="http://i1.bvimg.com/685082/124756e9f8fa7ea9.png" alt="Markdown"></p>
 <ul>
 <li><strong>深拷贝中，对于非容易类型（如数字，字符串和其他‘原子’类型的对象）没有拷贝一说</strong></li>
 <li>python中可变对象和不可变对象<ul>
