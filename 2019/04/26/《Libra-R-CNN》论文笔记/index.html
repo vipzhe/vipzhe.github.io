@@ -119,7 +119,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Object Detection,CVPR2019,">
 
 
 
@@ -130,16 +130,41 @@
 
 
 
-<meta name="description" content="What hurts more? The pain of hard work or the pain of regret?">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Carson&#39;s Home">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="CVPR2019 | Libra R-CNN: 全面平衡的目标检测器论文地址：https://arxiv.org/abs/1904.02701 代码地址：https://github.com/open-mmlab/mmdetection 主要贡献 IoU-balanced sampling：提升0.9个百分点 balanced feature pyramid：提升0.9个百分点 balanced">
+<meta name="keywords" content="Object Detection,CVPR2019">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《Libra R-CNN》论文笔记">
+<meta property="og:url" content="http://yoursite.com/2019/04/26/《Libra-R-CNN》论文笔记/index.html">
 <meta property="og:site_name" content="Carson&#39;s Home">
-<meta property="og:description" content="What hurts more? The pain of hard work or the pain of regret?">
+<meta property="og:description" content="CVPR2019 | Libra R-CNN: 全面平衡的目标检测器论文地址：https://arxiv.org/abs/1904.02701 代码地址：https://github.com/open-mmlab/mmdetection 主要贡献 IoU-balanced sampling：提升0.9个百分点 balanced feature pyramid：提升0.9个百分点 balanced">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://i1.bvimg.com/685082/475f6b2759c16853s.png">
+<meta property="og:image" content="http://i2.bvimg.com/685082/79105abdf79c5f8e.png">
+<meta property="og:image" content="http://i1.bvimg.com/685082/ceca508fa030ee78.png">
+<meta property="og:image" content="http://i2.bvimg.com/685082/8f862858fabdea66s.png">
+<meta property="og:image" content="http://i2.bvimg.com/685082/3c77ea15b4b3d119.png">
+<meta property="og:image" content="http://i1.bvimg.com/685082/f71c348cc7973505.png">
+<meta property="og:image" content="http://i2.bvimg.com/685082/13371a1654a82657.png">
+<meta property="og:image" content="http://i1.bvimg.com/685082/1d6d070f3c27c33e.png">
+<meta property="og:image" content="http://i1.bvimg.com/685082/69f0a4e6ed118002.png">
+<meta property="og:image" content="http://i2.bvimg.com/685082/c8e9178fd13fd1c9.png">
+<meta property="og:image" content="http://i2.bvimg.com/685082/972666c4cf822729.png">
+<meta property="og:image" content="http://i2.bvimg.com/685082/9768c25e940b5585.png">
+<meta property="og:image" content="http://i2.bvimg.com/685082/bad1182887e90002.png">
+<meta property="og:image" content="http://i2.bvimg.com/685082/2ff1569a9596940d.png">
+<meta property="og:image" content="http://i2.bvimg.com/685082/0324bd3a8543273b.png">
+<meta property="og:image" content="http://i2.bvimg.com/685082/fe0b35ac0fa7a73c.png">
+<meta property="og:image" content="http://i1.bvimg.com/685082/cbea5839242fb4cf.png">
+<meta property="og:image" content="http://i1.bvimg.com/685082/7402c0eb12e3f93a.png">
+<meta property="og:image" content="http://i1.bvimg.com/685082/38c83b6eda7d6293.png">
+<meta property="og:image" content="http://i1.bvimg.com/685082/68955f672119eb54.png">
+<meta property="og:image" content="http://i1.bvimg.com/685082/88089820f1a2cbd4.png">
+<meta property="og:image" content="http://i1.bvimg.com/685082/90765cf1fa68b2bb.png">
+<meta property="og:updated_time" content="2019-04-26T05:56:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Carson&#39;s Home">
-<meta name="twitter:description" content="What hurts more? The pain of hard work or the pain of regret?">
+<meta name="twitter:title" content="《Libra R-CNN》论文笔记">
+<meta name="twitter:description" content="CVPR2019 | Libra R-CNN: 全面平衡的目标检测器论文地址：https://arxiv.org/abs/1904.02701 代码地址：https://github.com/open-mmlab/mmdetection 主要贡献 IoU-balanced sampling：提升0.9个百分点 balanced feature pyramid：提升0.9个百分点 balanced">
+<meta name="twitter:image" content="http://i1.bvimg.com/685082/475f6b2759c16853s.png">
 
 
 
@@ -169,13 +194,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/26/《Libra-R-CNN》论文笔记/">
 
 
 
 
 
-  <title>Carson's Home</title>
+  <title>《Libra R-CNN》论文笔记 | Carson's Home</title>
   
 
 
@@ -196,8 +221,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     
     <a href="https://github.com/vipzhe" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
@@ -333,9 +357,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -365,9 +389,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/26/《Libra-R-CNN》论文笔记/" itemprop="url">《Libra R-CNN》论文笔记</a></h1>
+          <h1 class="post-title" itemprop="name headline">《Libra R-CNN》论文笔记</h1>
         
 
         <div class="post-meta">
@@ -494,21 +516,105 @@
 
       
       
-        
-          
-          CVPR2019 | Libra R-CNN: 全面平衡的目标检测器论文地址：https://arxiv.org/abs/1904.02701
-代码地址：https://github.com/open-mmlab/mmdetection
-主要贡献
-IoU-balanced sampling：提升0.
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/26/《Libra-R-CNN》论文笔记/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h1 id="CVPR2019-Libra-R-CNN-全面平衡的目标检测器"><a href="#CVPR2019-Libra-R-CNN-全面平衡的目标检测器" class="headerlink" title="CVPR2019 | Libra R-CNN: 全面平衡的目标检测器"></a>CVPR2019 | Libra R-CNN: 全面平衡的目标检测器</h1><p><strong>论文地址：<a href="https://arxiv.org/abs/1904.02701" target="_blank" rel="noopener">https://arxiv.org/abs/1904.02701</a></strong></p>
+<p><strong>代码地址：<a href="https://github.com/open-mmlab/mmdetection" target="_blank" rel="noopener">https://github.com/open-mmlab/mmdetection</a></strong></p>
+<h3 id="主要贡献"><a href="#主要贡献" class="headerlink" title="主要贡献"></a>主要贡献</h3><ul>
+<li><strong>IoU-balanced sampling：提升0.9个百分点</strong></li>
+<li><strong>balanced feature pyramid：提升0.9个百分点</strong></li>
+<li><strong>balanced L1 loss：提升0.8个百分点</strong></li>
+</ul>
+<p><strong>实际项目中可参考！！</strong></p>
+<hr>
+<h2 id="研究动机"><a href="#研究动机" class="headerlink" title="研究动机"></a>研究动机</h2><p>目前主流的目标检测算法，无论 SSD、Faster R-CNN、Retinanet 这些的 detector 的设计其实都是三个步骤：</p>
+<ul>
+<li><strong>候选框采样</strong></li>
+<li><strong>提取候选框特征</strong></li>
+<li><strong>在标准多任务损失函数的指导下识别类别和修正位置</strong></li>
+</ul>
+<p>但是在以下三个方面存在不平衡：</p>
+<ul>
+<li><strong>Sample level imbalance</strong>：在训练过程中，难例样本更有价值因为能提升检测性能。但是随机采样(random sampling)主要选中的是简单样本。OHEM会选择更多的难例样本，但是对噪音数据敏感，且引入额外花销。Focal loss在一阶段模型中效果不错，但是在两阶段效果一般因为两阶段模型已经过滤掉了大部分的容易负样本。<strong>如何选择具有代表性的region proposal？</strong></li>
+<li><strong>Feature level imbalance</strong>：高层特征含有更多语义特征，低层特征含有更多位置特征。不同特征融合会产生更好效果。<strong>不同level的特征如何融合才能真正地充分利用？</strong></li>
+<li><strong>Object level imbalance</strong>： 检测器有分类和定位两个任务。<strong>目前设计的损失函数能不能引导目标检测器更好地收敛？</strong></li>
+</ul>
+<center><img src="http://i1.bvimg.com/685082/475f6b2759c16853s.png" alt="Markdown"></center>
+
+
+<p>针对以上问题，作者提出了三个方面的改进：</p>
+<ul>
+<li><strong>IoU-balanced sampling</strong>：通过IoU挖掘难例样本。</li>
+<li><strong>balanced feature pyramid</strong></li>
+<li><strong>balanced L1 loss</strong></li>
+</ul>
+<h2 id="具体方法"><a href="#具体方法" class="headerlink" title="具体方法"></a>具体方法</h2><center><img src="http://i2.bvimg.com/685082/79105abdf79c5f8e.png" alt="Markdown"></center>
+
+<h3 id="IoU-balanced-Sampling"><a href="#IoU-balanced-Sampling" class="headerlink" title="IoU-balanced Sampling"></a>IoU-balanced Sampling</h3><p>作者认为Sample level的不平衡是因为随机采样造成的，OHEM对噪音数据比较敏感。随机采样造成的不平衡见下图：</p>
+<center><img src="http://i1.bvimg.com/685082/ceca508fa030ee78.png" alt="Markdown"></center>
+
+<p>随机采样的话，70%以上的样本IoU不到0.05，因为一张图片中目标区域一般比较小，生成候选框时大部分候选框都是背景框，所以随机采样大部分样本集中在IoU不足0.05。事实上，60%的难例负样本的IoU都大于0.05， 随机采样只获得了30%。</p>
+<p>假设要从M个候选框上采样N个负样本，随机采样下每个样本被选中的概率是：</p>
+<center><img src="http://i2.bvimg.com/685082/8f862858fabdea66s.png" alt="Markdown"></center>
+
+<p>通过根据IoU的值划分为K个区间，总数还为N，每个区间中的候选采样数为$M_k$, IoU-balanced sampling的公式为：</p>
+<center><img src="http://i2.bvimg.com/685082/3c77ea15b4b3d119.png" alt="Markdown"></center>
+
+<h3 id="Balanced-Feature-Pyramid"><a href="#Balanced-Feature-Pyramid" class="headerlink" title="Balanced Feature Pyramid"></a>Balanced Feature Pyramid</h3><center><img src="http://i1.bvimg.com/685082/f71c348cc7973505.png" alt="Markdown"></center>
+
+<p>作者提出通过使用相同的集成平衡语义特征来增强多层特征。主要包括四个步骤：</p>
+<ul>
+<li><strong>rescaling</strong>: 不同层l的特征表示为$C_l$。多层特征的数目表示为L。图4中C2拥有最高分辨率。将{C2,C3,C4,C5} resize到一个中间大小，例如C4，通过插值或者最大池化操作。</li>
+<li><strong>integrating</strong>：特征rescale后，童工平均得到<em>balanced semantic feature</em>。然后再通过相同的相反操作rescale。在这个过程中每个分辨率都从其他层获得了相同的信息。<strong>该过程是无参数的</strong></li>
+</ul>
+<center><img src="http://i2.bvimg.com/685082/13371a1654a82657.png" alt="Markdown"></center>
+
+<ul>
+<li><strong>refining</strong>：balanced的语义特征可以通过直接卷积或者non-local进一步refine。</li>
+<li><strong>strengthening</strong>：输出{P2,P3,P4,P5}用于检测</li>
+</ul>
+<h3 id="Balanced-L1-Loss"><a href="#Balanced-L1-Loss" class="headerlink" title="Balanced L1 Loss"></a>Balanced L1 Loss</h3><p>Fast R-CNN通过 multi-task loss来解决分类和定位问题，定义如下：</p>
+<center><img src="http://i1.bvimg.com/685082/1d6d070f3c27c33e.png" alt="Markdown"></center>
+
+<p>$L_cls、L_loc$分别代表识别和定位的目标函数。p代表预测，u代表目标。$t^u$代表class u的回归结果，v代表回归目标。λ表示权重。loss大于等于1的样本称为outliers，其他称为inliers。</p>
+<p>一个自然的想法是调节两个损失。然而，由于回归目标没有边界限制，直接增加定位损失的权重会使得模型对outlier更敏感。outliers看做是难例，产生过大的梯度会对训练过程带来损伤。inliers，是容易样本，相比outliers贡献的梯度很小，几乎只有outliers的30%。Smooth L1 loss的定义如下：</p>
+<center><img src="http://i1.bvimg.com/685082/69f0a4e6ed118002.png" alt="Markdown"></center>
+
+<p>作者提出的Balanced L1 Loss：</p>
+<center><img src="http://i2.bvimg.com/685082/c8e9178fd13fd1c9.png" alt="Markdown"></center>
+
+<p>梯度遵循：</p>
+<center><img src="http://i2.bvimg.com/685082/972666c4cf822729.png" alt="Markdown"></center>
+
+<p>这样|x|&lt;1的时候就会产生较大的梯度，即：</p>
+<center><img src="http://i2.bvimg.com/685082/9768c25e940b5585.png" alt="Markdown"></center>
+
+<p>根据梯度求出：</p>
+<center><img src="http://i2.bvimg.com/685082/bad1182887e90002.png" alt="Markdown"></center>
+
+<p>同时满足：</p>
+<center><img src="http://i2.bvimg.com/685082/2ff1569a9596940d.png" alt="Markdown"></center>
+
+<p>结果如下图所示：</p>
+<center><img src="http://i2.bvimg.com/685082/0324bd3a8543273b.png" alt="Markdown"></center>
+
+
+<h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><center><img src="http://i2.bvimg.com/685082/fe0b35ac0fa7a73c.png" alt="Markdown"></center>
+
+
+<center><img src="http://i1.bvimg.com/685082/cbea5839242fb4cf.png" alt="Markdown"></center>
+
+<center><img src="http://i1.bvimg.com/685082/7402c0eb12e3f93a.png" alt="Markdown"></center>
+
+<center><img src="http://i1.bvimg.com/685082/38c83b6eda7d6293.png" alt="Markdown"></center>
+
+<center><img src="http://i1.bvimg.com/685082/68955f672119eb54.png" alt="Markdown"></center>
+
+<center><img src="http://i1.bvimg.com/685082/88089820f1a2cbd4.png" alt="Markdown"></center>
+
+<center><img src="http://i1.bvimg.com/685082/90765cf1fa68b2bb.png" alt="Markdown"></center>
+
+
+
+
       
     </div>
     
@@ -523,440 +629,48 @@ IoU-balanced sampling：提升0.
 
     <div>
       
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+      
     </div>
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/25/python面试复习/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Carson">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/WechatIMG255.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Carson's Home">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/25/python面试复习/" itemprop="url">python面试复习</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-25T22:47:27+08:00">
-                2019-04-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/面试/" itemprop="url" rel="index">
-                    <span itemprop="name">面试</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/Object-Detection/" rel="tag"><i class="fa fa-tag"></i>" Object Detection</a>
           
-
+            <a href="/tags/CVPR2019/" rel="tag"><i class="fa fa-tag"></i>" CVPR2019</a>
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/04/25/python面试复习/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/25/python面试复习/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/04/25/python面试复习/" class="leancloud_visitors" data-flag-title="python面试复习">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-                 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  4.5k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  16
-                </span>
-              
-            </div>
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+      
 
       
       
-
+      
 
       
-      
-        
-          
-          常见python面试题Python是如何进行内存管理的？答:从三个方面来说,一对象的引用计数机制,二垃圾回收机制,三内存池机制
-一、对象的引用计数机制
-Python内部使用引用计数，来保持追踪内存中的对象，所有对象都有引用计数。
-引用计数增加的情况：
-1，一个对象分配一个新名称
-2，将其放入一个容器
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/25/python面试复习/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/25/python面试复习/" rel="next" title="python面试复习">
+                <i class="fa fa-chevron-left"></i> python面试复习
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <div>
-      
-    </div>
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/25/C++面试复习/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Carson">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/WechatIMG255.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Carson's Home">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/25/C++面试复习/" itemprop="url">C++面试复习</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-25T21:34:34+08:00">
-                2019-04-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/面试/" itemprop="url" rel="index">
-                    <span itemprop="name">面试</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/04/25/C++面试复习/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/25/C++面试复习/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/04/25/C++面试复习/" class="leancloud_visitors" data-flag-title="C++面试复习">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-                 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  7.6k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  26
-                </span>
-              
-            </div>
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-
-      
-      
-        
-          
-          1.变量和常量的区别
-变量在定义后为程序提供了一个有 名字的内存区域
-常量不可以改变值，在定义的时候必须初始化。变量可以改变值，在定义的时候可以不进行初始化。
-常量本身没有地址属性（除字符串常量等），变量有地址属性。
-
-2.自增自减前操作和后操作的区别
-++a称为前操作，a++称为后操作。前操作是先
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/25/C++面试复习/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <div>
-      
-    </div>
-    <footer class="post-footer">
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -966,10 +680,11 @@ Python内部使用引用计数，来保持追踪内存中的对象，所有对�
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -977,6 +692,13 @@ Python内部使用引用计数，来保持追踪内存中的对象，所有对�
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -997,8 +719,17 @@ Python内部使用引用计数，来保持追踪内存中的对象，所有对�
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1060,6 +791,22 @@ Python内部使用引用计数，来保持追踪内存中的对象，所有对�
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CVPR2019-Libra-R-CNN-全面平衡的目标检测器"><span class="nav-number">1.</span> <span class="nav-text">CVPR2019 | Libra R-CNN: 全面平衡的目标检测器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主要贡献"><span class="nav-number">1.0.1.</span> <span class="nav-text">主要贡献</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#研究动机"><span class="nav-number">1.1.</span> <span class="nav-text">研究动机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#具体方法"><span class="nav-number">1.2.</span> <span class="nav-text">具体方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IoU-balanced-Sampling"><span class="nav-number">1.2.1.</span> <span class="nav-text">IoU-balanced Sampling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Balanced-Feature-Pyramid"><span class="nav-number">1.2.2.</span> <span class="nav-text">Balanced Feature Pyramid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Balanced-L1-Loss"><span class="nav-number">1.2.3.</span> <span class="nav-text">Balanced L1 Loss</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验结果"><span class="nav-number">1.3.</span> <span class="nav-text">实验结果</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1215,6 +962,10 @@ Python内部使用引用计数，来保持追踪内存中的对象，所有对�
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
