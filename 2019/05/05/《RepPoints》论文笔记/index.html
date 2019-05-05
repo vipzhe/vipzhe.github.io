@@ -152,7 +152,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/05/E08OHO.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/05/E08qu6.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/05/E08jED.png">
-<meta property="og:updated_time" content="2019-05-05T08:50:36.000Z">
+<meta property="og:updated_time" content="2019-05-05T09:34:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《RepPoints》论文笔记">
 <meta name="twitter:description" content="RepPoints: Point Set Representation for Object Detection论文地址：https://arxiv.org/pdf/1904.11490.pdf   研究背景  在目标检测的pipeline中，Bounding Boxes，包含图片的矩形区域。在目标检测器的阶段中，Bounding Boxes负责描述目标的位置，从anchors到proposals">
@@ -529,14 +529,14 @@
 <p>  性能最好的目标检测器经常遵循一个多阶段的识别模式，目标定位会逐阶段的进行修正。整个pipeline过程中的目标表示的角色为：<br>  <center><img src="https://s2.ax1x.com/2019/05/05/E08hEF.png" alt="E08hEF.png"> </center></p>
 <p>  对于一个anchor来说，采用中心点的图像特征作为对象特征，可以用来产生一个关于这个anchor是否是目标的置信度分数，并且通过边界框回归处理来得到一个调整过的边界框。调整过的边界框表示为”box proposals（S1)“</p>
 <p>  在第二阶段，通过RoI pooling或者 RoI-Align从修正过的边界框内提取修正的目标特征。对于两阶段的框架来说，修正的特征将通过边界框回归产生最终的边界框目标。对于多阶段方法来说，修正的特征用来产生中间的修正边界框Bounding box proposals(S2)。这一步可以在产生最终边界框目标前迭代多次。</p>
-<h3 id="边界框回归"><a href="#边界框回归" class="headerlink" title="边界框回归"></a>边界框回归</h3><p>  一个4维的回归向量(△xp, △yp, △wp, △hp）预测来将现在的边界框Bp=(xp, yp, wp, hp)映射到一个修正后的边界框Br，<br>  <center><img src="https://s2.ax1x.com/2019/05/05/E08WHU.png" alt="E08WHU.png"></center><br>  给定一个目标的gt边界框Bt=(xt, yt, wt, ht)，边界框回归的目标就是让Br和Bt尽可能的接近。在目标检测器训练过程中，我们使用F(Bp, Bt)作为学习目标，使用smooth l1损失：<br>  <center><img src="https://s2.ax1x.com/2019/05/05/E08RBT.png" alt="E08RBT.png"></center><br>  这种边界框回归在需要的调整较小的时候效果比较好，但是当最初的表示和目标距离较大的时候表现一般。另一点是△x, △y, △w, △h的尺度不同，需要设置不同的损失权重。</p>
+<h3 id="边界框回归"><a href="#边界框回归" class="headerlink" title="边界框回归"></a>边界框回归</h3><p>  一个4维的回归向量(△$x_p$, △$y_p$, △$w_p$, △$h_p$）预测来将现在的边界框Bp=($x_p, y_p, w_p, h_p$)映射到一个修正后的边界框Br，<br>  <center><img src="https://s2.ax1x.com/2019/05/05/E08WHU.png" alt="E08WHU.png"></center><br>  给定一个目标的gt边界框Bt=($x_t, y_t, w_t, h_t$)，边界框回归的目标就是让$B_r$和$B_t$尽可能的接近。在目标检测器训练过程中，我们使用$F(B_p, B_t)$作为学习目标，使用smooth l1损失：<br>  <center><img src="https://s2.ax1x.com/2019/05/05/E08RBT.png" alt="E08RBT.png"></center><br>  这种边界框回归在需要的调整较小的时候效果比较好，但是当最初的表示和目标距离较大的时候表现一般。另一点是△x, △y, △w, △h的尺度不同，需要设置不同的损失权重。</p>
 <h3 id="RepPoints"><a href="#RepPoints" class="headerlink" title="RepPoints"></a>RepPoints</h3><p>  如前所示，4-d边界框是目标位置的一个粗略表示。边界框表示只考虑目标的矩形空间范围，而不考虑形状、姿势和语义上重要的局部区域的位置，这些位置可用于更好的定位和更好的目标特征提取。<br>  为了克服以上限制，RepPoints对一组自适应的样本点建模：<br>  <center><img src="https://s2.ax1x.com/2019/05/05/E084N4.png" alt="E084N4.png"></center><br>  n表示用于表示的样本点的总数。在本文中，n默认设置为9.</p>
 <h3 id="RepPoints-refinement"><a href="#RepPoints-refinement" class="headerlink" title="RepPoints refinement"></a>RepPoints refinement</h3><p>  对于RepPoints来说，修正过程可简单表示为：<br>  <center><img src="https://s2.ax1x.com/2019/05/05/E08oC9.png" alt="E08oC9.png"></center><br>  这个修正过程不会面临尺度不同的问题，因为RepPoints的修正过程所有偏移量尺度是相同的。</p>
-<h3 id="通过将RepPoints转为边界框"><a href="#通过将RepPoints转为边界框" class="headerlink" title="通过将RepPoints转为边界框"></a>通过将RepPoints转为边界框</h3><p>  通过预定义的转换函数T: Rp -&gt; Bp， Rp表示目标P的RepPoints， T（Rp）表示伪框(pseudo box）。<br>  有三种转换函数：</p>
+<h3 id="通过将RepPoints转为边界框"><a href="#通过将RepPoints转为边界框" class="headerlink" title="通过将RepPoints转为边界框"></a>通过将RepPoints转为边界框</h3><p>  通过预定义的转换函数T: $R_p -&gt; B_p$， Rp表示目标P的RepPoints， $T(R_p)$表示伪框(pseudo box）。<br>  有三种转换函数：</p>
 <ul>
-<li>T = T1： Min-max函数。沿RepPoints的对称轴检测Bp</li>
-<li>T = T2：Partial min-max 函数。在采样点的子集上进行min-max操作</li>
-<li>T = T3：Moment-hased 函数。通过RepPoints的平均值和二阶矩来计算中心点和矩形框的大小Bp，尺度大小是由全局共享的λx和λy相乘得到。</li>
+<li>T = $T_1$： Min-max函数。沿RepPoints的对称轴检测Bp</li>
+<li>T = $T_2$：Partial min-max 函数。在采样点的子集上进行min-max操作</li>
+<li>T = $T_3$：Moment-hased 函数。通过RepPoints的平均值和二阶矩来计算中心点和矩形框的大小$B_p$，尺度大小是由全局共享的$λ_x$和$λ_y$相乘得到。</li>
 </ul>
 <h3 id="Learning-RepPoints"><a href="#Learning-RepPoints" class="headerlink" title="Learning RepPoints"></a>Learning RepPoints</h3><p>  RepPoints的学习是由目标定位损失和目标识别损失共同驱动的。为了计算目标定位损失，我们首先将RepPoints转换为伪框，通过上面讨论的转换函数T。然后，计算转换后的伪框与gt框的差异。在本文中，使用top-left和bottom-right间的smooth l1距离表示定位损失。</p>
 <p>  图三显示，当训练由目标定位损失和目标识别损失组合驱动时，目标的极值点和语义关键点可以自动学习。<br>  <img src="https://s2.ax1x.com/2019/05/05/E08LDK.png" alt="E08LDK.png"></p>
@@ -558,7 +558,7 @@
 <p>正如图3所示，Extreme和key points都是自动学习的。</p>
 </li>
 </ul>
-<h3 id="其他细节"><a href="#其他细节" class="headerlink" title="其他细节"></a>其他细节</h3><p>  FPN结构产生5个特征金字塔，从stage3（下采样率为8）到stage7（下采样率为128），对于一个宽wb,高hb的框B，它对应于金字塔level lvl(B)， 对每个gt框Bt， 我们将它的中心点投影到每个层次level l上(l=3,4,5,6,7）。投射后表示为ql。 qlvl(Bt)表示为正样本，qlvl(Bt)-1和qlvl(Bt)+1 表示为ignore bin。其他的置为负样本。</p>
+<h3 id="其他细节"><a href="#其他细节" class="headerlink" title="其他细节"></a>其他细节</h3><p>  FPN结构产生5个特征金字塔，从stage3（下采样率为8）到stage7（下采样率为128），对于一个宽$w_b$,高$h_b$的框B，它对应于金字塔level $lvl(B)$， 对每个gt框$B_t$， 我们将它的中心点投影到每个层次level l上(l=3,4,5,6,7）。投射后表示为$q_l$。 $q_{lvl(Bt)}$表示为正样本，$q_{lvl(Bt)-1}$和$q_{lvl(Bt)+1}$ 表示为ignore bin。其他的置为负样本。</p>
 <p><a href="https://imgchr.com/i/E087g1" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/05/E087g1.png" alt="E087g1.png"></a>  </p>
 <h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><p><img src="https://s2.ax1x.com/2019/05/05/E08OHO.png" alt="E08OHO.png"></p>
 <p>从表 1 可以看出，将目标表示从边界框变为 RepPoints，可以带来一定程度的性能提升，如使用 ResNet-50 作为主干网络时提升了 2.1 mAP，使用 ResNet-101 时提升了 2.0 mAP。这表明相对于边界框，RepPoints 表示在对象检测方面具有优势。</p>
