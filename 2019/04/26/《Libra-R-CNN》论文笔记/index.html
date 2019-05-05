@@ -160,7 +160,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/05/E0GzZT.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/05/E0Gjs0.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/05/E0JSdU.png">
-<meta property="og:updated_time" content="2019-05-05T09:25:49.000Z">
+<meta property="og:updated_time" content="2019-05-05T11:24:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《Libra R-CNN》论文笔记">
 <meta name="twitter:description" content="CVPR2019 | Libra R-CNN: 全面平衡的目标检测器论文地址：https://arxiv.org/abs/1904.02701 代码地址：https://github.com/open-mmlab/mmdetection 主要贡献 IoU-balanced sampling：提升0.9个百分点 balanced feature pyramid：提升0.9个百分点 balanced">
@@ -574,12 +574,12 @@
 <h3 id="Balanced-L1-Loss"><a href="#Balanced-L1-Loss" class="headerlink" title="Balanced L1 Loss"></a>Balanced L1 Loss</h3><p>Fast R-CNN通过 multi-task loss来解决分类和定位问题，定义如下：</p>
 <center><img src="https://s2.ax1x.com/2019/05/05/E0GfMt.png" alt="E0GfMt.png"></center>
 
-<p>$L_cls、L_loc$分别代表识别和定位的目标函数。p代表预测，u代表目标。$t^u$代表class u的回归结果，v代表回归目标。λ表示权重。loss大于等于1的样本称为outliers，其他称为inliers。</p>
+<p>$L_{cls}、L_{loc}$分别代表识别和定位的目标函数。p代表预测，u代表目标。$t^u$代表class u的回归结果，v代表回归目标。λ表示权重。loss大于等于1的样本称为outliers，其他称为inliers。</p>
 <p>一个自然的想法是调节两个损失。然而，由于回归目标没有边界限制，直接增加定位损失的权重会使得模型对outlier更敏感。outliers看做是难例，产生过大的梯度会对训练过程带来损伤。inliers，是容易样本，相比outliers贡献的梯度很小，几乎只有outliers的30%。Smooth L1 loss的定义如下：</p>
 <center><img src="https://s2.ax1x.com/2019/05/05/E0GRxI.png" alt="E0GRxI.png"></center>
 
 <p>作者提出的Balanced L1 Loss：</p>
-<center>[<img src="https://s2.ax1x.com/2019/05/05/E0GhsP.png" alt="E0GhsP.png">](<a href="https://imgchr.com/i/E0GhsP" target="_blank" rel="noopener">https://imgchr.com/i/E0GhsP</a></center>
+<center><a href="https://imgchr.com/i/E0GhsP" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/05/E0GhsP.png" alt="E0GhsP.png"></a></center>
 
 <p>梯度遵循：</p>
 <center><a href="https://imgchr.com/i/E0GodS" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/05/E0GodS.png" alt="E0GodS.png"></a></center>
